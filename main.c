@@ -8,8 +8,15 @@ long long pot(long long base, int exp) {
 }
 
 long long pot_eficiente(long long base, int exp) {
-    /* IMPLEMENTAR ESTA FUNÇÃO COM ALGORITMO MAISEFICIENTE QUE POT() */
-    return 0; // Substitua este retorno pelo resultado correto
+if (exp == 0){
+return 1;
+}
+long long half = pot_eficiente(base, exp / 2);
+if (exp % 2 == 0) {
+return half * half;
+} else {
+return base * half * half;
+}
 }
 
 int main() {
